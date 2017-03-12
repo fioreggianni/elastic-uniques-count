@@ -6,14 +6,8 @@ module.exports = {
 	},
 	consumer: {
 		correction: process.env.CORRECTION,
-		startMode: process.env.STARTMODE
-	},
-	factory: {
-		
-	},
-	producer: {
-		batchmax: process.env.BATCHMAX,
-		batchrate: process.env.BATCHRATE
+		startMode: process.env.STARTMODE,
+		demo: process.env.DEMO
 	}
 }
 

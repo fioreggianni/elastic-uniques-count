@@ -11,10 +11,13 @@ var defaultConfig = {
 	tester: {
 		ips: 256,
 		keys: 150,
-		iterations: 100000
+		iterations: 100000,
+		memory: 2000
 	},
 	consumer: {
-		correction: 1
+		demo: false,
+		correction: 1,
+		startMode: "exact"
 	}
 }
 
@@ -25,7 +28,7 @@ var factory = Factory(config.factory)
 consumer.memory(config.tester.memory)
 
 var allips = []
-for (var i=0;i<config.tester.iterations; i++){
+for (var i=1;i<=config.tester.iterations; i++){
 	//if (i % 25000 == 0) consumer.memory(2000 - i/100)
 	var chooseAnother = utils.getRandomInt(1, 100) > 90
 	if (chooseAnother || !allips.length) {
@@ -37,5 +40,10 @@ for (var i=0;i<config.tester.iterations; i++){
 
 	if (allips.indexOf(ip) < 0) allips.push(ip)
 	consumer.consume(ip)
+	if (i % 10 == 0 && config.consumer.demo) {
+		var uniques = consumer.uniques()
+		var exactUniques = consumer.exactUniques()
+		console.log("%s,%s,%s,%s,%s", i, uniques, exactUniques, consumer.memory(), config.tester.memory)
+	}
 
 }
