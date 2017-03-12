@@ -1,0 +1,44 @@
+{
+  "name": "elastic-uniques-count",
+  "version": "1.0.0",
+  "description": "An experimental fallbacking algorithm: from linear unique elements count to sublinear Flajolet-Martin",
+  "main": "tester.js",
+  "dependencies": {
+    "ascii-histogram": "^1.2.1",
+    "bytes": "^2.4.0",
+    "colors": "^1.1.2",
+    "cyclist": "^1.0.1",
+    "jetty": "^0.2.1",
+    "lodash": "^4.16.6",
+    "lodash.defaultsdeep": "^4.6.0",
+    "memwatch-next": "^0.3.0",
+    "moment": "^2.15.2",
+    "progress": "^1.1.8",
+    "sha1": "^1.1.1",
+    "timely": "^0.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node testers/unique-tester.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fioreggianni/elastic-uniques-count.git"
+  },
+  "keywords": [
+    "streaming",
+    "weblogs",
+    "algorithms",
+    "data",
+    "mining",
+    "tracking",
+    "flajolet",
+    "uniques"
+  ],
+  "author": "Gianni Fiore",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fioreggianni/elastic-uniques-count/issues"
+  },
+  "homepage": "https://github.com/fioreggianni/elastic-uniques-count#readme"
+}
